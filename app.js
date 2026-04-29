@@ -1,4 +1,4 @@
-// ===== XoDos2 Rebirth - App JS =====
+// ===== XoDos:Re — App JS =====
 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
@@ -10,7 +10,6 @@ if (navToggle && mainNav) {
     navToggle.classList.toggle('active');
   });
 
-  // Close nav on link click
   mainNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mainNav.classList.remove('open');
@@ -42,7 +41,6 @@ const releaseCards = document.querySelectorAll('.release-card');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Update active button
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -68,11 +66,8 @@ function copyAddress() {
   navigator.clipboard.writeText(address).then(() => {
     const feedback = document.getElementById('copyFeedback');
     feedback.classList.add('show');
-    setTimeout(() => {
-      feedback.classList.remove('show');
-    }, 2000);
+    setTimeout(() => feedback.classList.remove('show'), 2000);
   }).catch(() => {
-    // Fallback for older browsers
     const textarea = document.createElement('textarea');
     textarea.value = address;
     document.body.appendChild(textarea);
@@ -81,18 +76,11 @@ function copyAddress() {
     document.body.removeChild(textarea);
     const feedback = document.getElementById('copyFeedback');
     feedback.classList.add('show');
-    setTimeout(() => {
-      feedback.classList.remove('show');
-    }, 2000);
+    setTimeout(() => feedback.classList.remove('show'), 2000);
   });
 }
 
-// ===== Intersection Observer for Fade-in Animations =====
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
+// ===== Intersection Observer — Fade-in Animations =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -100,9 +88,8 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-// Add fade-in class to sections
 document.querySelectorAll('.section, .release-card, .contributor-card, .thanks-block').forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
@@ -124,6 +111,7 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(link => {
     link.style.opacity = '0.75';
     link.style.color = '';
+    link.style.textShadow = '';
     if (link.getAttribute('href') === '#' + current) {
       link.style.opacity = '1';
       link.style.color = 'var(--accent-color)';

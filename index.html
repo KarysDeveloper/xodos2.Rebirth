@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/xodiosx/XoDos2/main/icon.png" type="image/png">
+  <title>XoDos2 Rebirth | Linux Desktop on Android</title>
+</head>
+<body>
+
+  <!-- Background Glow Effects -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="https://raw.githubusercontent.com/xodiosx/XoDos2/main/icon.png" alt="XoDos" class="logo-icon">
+        <h1 class="title">XoDos<span>2</span> Rebirth</h1>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#about" class="nav-link">Qué es</a></li>
+          <li><a href="#how-it-works" class="nav-link">Cómo Funciona</a></li>
+          <li><a href="#features" class="nav-link">Características</a></li>
+          <li><a href="#releases" class="nav-link">Releases</a></li>
+          <li><a href="#contributors" class="nav-link">Contribuidores</a></li>
+          <li><a href="#community" class="nav-link">Comunidad</a></li>
+          <li><a href="#donate" class="nav-link">Donar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="hero-badge">🔥 Open Source · Sin Root · Linux Completo</p>
+        <h2 class="hero-title">Bringing Linux Desktop<br>to Your Android Device</h2>
+        <p class="hero-subtitle">Un entorno de escritorio Linux revolucionario que corre nativamente en Android. Sin conflictos con Termux, sin root, sin límites. Wine, Steam, Blender, GIMP y mucho más — todo desde tu móvil.</p>
+        <div class="hero-btns">
+          <a href="#releases" class="btn-primary">⬇ Descargar Última Versión</a>
+          <a href="https://github.com/xodiosx/XoDos2" class="btn-secondary" target="_blank">💻 Ver en GitHub</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">89</span><span class="stat-label">Stars</span></div>
+          <div class="stat"><span class="stat-num">35K+</span><span class="stat-label">Descargas</span></div>
+          <div class="stat"><span class="stat-num">7</span><span class="stat-label">Releases</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT / QUÉ ES ========== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section-title">¿Qué es XoDos2 Rebirth?</h2>
+        <p class="section-subtitle">La evolución del proyecto XoDos original, reconstruido desde cero</p>
+        <div class="about-grid">
+          <div class="about-text">
+            <p><strong>XoDos2 Rebirth</strong> es un entorno de escritorio Linux completo que funciona de forma nativa en dispositivos Android. Inspirado en el proyecto <a href="https://github.com/Cateners/tiny_computer" target="_blank">tiny_computer</a>, XoDos2 lleva la experiencia Linux a tu bolsillo sin necesidad de root ni configuraciones complicadas.</p>
+            <p>A diferencia de otras soluciones, XoDos2 está diseñado para <strong>no interferir</strong> con Termux, Termux X11 u otras aplicaciones Android. Es una experiencia standalone pura: descarga, instala y tendrás un escritorio Linux completo con Wine, GPU drivers, y cientos de aplicaciones disponibles.</p>
+            <p>Construido con <strong>Flutter/Dart</strong>, XoDos2 integra un emulador de terminal (xterm), un cliente VNC (AVNC), y un cliente X11 nativo — todo en una sola app que te da acceso a un mundo de posibilidades.</p>
+          </div>
+          <div class="about-highlight">
+            <div class="highlight-card">
+              <div class="highlight-icon">🐧</div>
+              <h3>Linux Completo</h3>
+              <p>Debian via PRoot con escritorio Xfce4 nativo. No es una simulación — es Linux real corriendo en tu Android.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🍷</div>
+              <h3>Windows en tu Móvil</h3>
+              <p>Wine + box64 + DXVK te permiten ejecutar aplicaciones y juegos de PC directamente en tu dispositivo.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🎮</div>
+              <h3>Gaming & Emulación</h3>
+              <p>Steam, RetroArch, PCSX-ReARMed, AetherSX2, Xemu y más. Tu móvil se convierte en una estación de gaming.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">¿Cómo Funciona?</h2>
+        <p class="section-subtitle">La arquitectura híbrida que hace posible Linux en Android</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>PRoot — El Motor Linux</h3>
+              <p>XoDos2 utiliza <strong>PRoot</strong> para crear un entorno Linux (Debian) dentro de Android sin necesidad de root. PRoot intercepta las llamadas del sistema y las traduce, creando un espacio de usuario Linux completo y funcional.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Escritorio Híbrido Nativo + PRoot</h3>
+              <p>Desde v1.0.6, XoDos2 ofrece un escritorio <strong>Xfce4 nativo</strong> corriendo junto al entorno PRoot. Las apps nativas ARM64 (Bionic) y las apps PRoot Linux conviven en el mismo escritorio — lo mejor de ambos mundos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Visualización: VNC, X11 y Terminal</h3>
+              <p>Tres modos de pantalla: <strong>AVNC</strong> (cliente VNC integrado), <strong>Termux X11</strong> (X11 nativo con mejor rendimiento), y <strong>Terminal</strong> (xterm para acceso directo). Cambia entre ellos según tu necesidad.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3>GPU Drivers & Wine</h3>
+              <p>Drivers gráficos como <strong>VirGL, ANGLE, Turnip, GL4ES y Venus VirtIO</strong> permiten aceleración hardware. Combinados con <strong>Wine + box64 + DXVK</strong>, puedes ejecutar apps y juegos de Windows con traducción DirectX a Vulkan.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">05</div>
+            <div class="step-content">
+              <h3>App Store & Quick Commands</h3>
+              <p>Desde v1.0.7, una <strong>App Store nativa</strong> te permite instalar Blender, GIMP, Firefox, VSCode y más con un clic. Los <strong>Quick Commands</strong> facilitan instalar apps adicionales como WPS Office, Telegram, Discord Lite, etc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="section features" id="features">
+      <div class="container">
+        <h2 class="section-title">Características</h2>
+        <p class="section-subtitle">Todo lo que XoDos2 ofrece en un solo paquete</p>
+        <div class="features-grid">
+          <div class="card">
+            <div class="card-icon">🔄</div>
+            <h3>Sin Conflictos</h3>
+            <p>Diseñado para no interferir con Termux, Termux X11 u otras apps. Experiencia Linux standalone pura.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🍷</div>
+            <h3>Compatibilidad Windows</h3>
+            <p>Wine + box64 + DXVK + VKD3D para ejecutar aplicaciones y juegos de PC en tu móvil.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔓</div>
+            <h3>Sin Root</h3>
+            <p>Accede a todo el poder de Linux sin rootear tu dispositivo Android. PRoot hace la magia.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Optimizado Móvil</h3>
+            <p>Interfaz táctil optimizada, gamepad support, touch controls y gestión eficiente de recursos.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎮</div>
+            <h3>Gaming Completo</h3>
+            <p>Steam, RetroArch, emuladores PS1/PS2/Xbox, y GPU drivers para máxima compatibilidad gráfica.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛒</div>
+            <h3>App Store Nativa</h3>
+            <p>Instala Blender, GIMP, Inkscape, Firefox, Python y más desde la app store integrada (desde v1.0.7).</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🖥️</div>
+            <h3>Escritorio Híbrido</h3>
+            <p>Xfce4 nativo + PRoot en un mismo escritorio. Apps Bionic ARM64 y Linux conviven juntas.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Temas & Personalización</h3>
+            <p>Temas personalizables para Xfce4, múltiples opciones de display y configuración flexible.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔧</div>
+            <h3>Developer Friendly</h3>
+            <p>Python 3.13, terminal completo, acceso a archivos, y herramientas de desarrollo en tu bolsillo.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Multi-Idioma</h3>
+            <p>Soporte para inglés, español, chino, japonés, árabe, hindi, portugués, francés y más.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📡</div>
+            <h3>VNC & noVNC Sharing</h3>
+            <p>Comparte y controla tu escritorio XoDos desde cualquier dispositivo en tu red local.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💾</div>
+            <h3>Backup & Restore</h3>
+            <p>Respalda y restaura tu configuración completa con las herramientas integradas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RELEASES ========== -->
+    <section class="section releases" id="releases">
+      <div class="container">
+        <h2 class="section-title">Releases</h2>
+        <p class="section-subtitle">Descarga la versión que necesitas</p>
+
+        <div class="release-filters">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="stable">✅ Stable</button>
+          <button class="filter-btn" data-filter="prerelease">🧪 Pre-release</button>
+        </div>
+
+        <div class="releases-list">
+
+          <!-- v1.0.7 — STABLE -->
+          <div class="release-card stable" data-type="stable">
+            <div class="release-header">
+              <div class="release-badge stable-badge">✅ Stable</div>
+              <span class="release-date">Mar 30, 2026</span>
+            </div>
+            <h3 class="release-version">v1.0.7</h3>
+            <p class="release-tagline">🛒 Native App Store & Proot Enhancements</p>
+            <div class="release-details">
+              <ul>
+                <li><strong>🛒 Native App Store (Beta)</strong> — Instala Blender, GIMP, Inkscape, Audacity, Chromium, Firefox, Python 3.13 y más con un clic.</li>
+                <li><strong>🛠️ Pi Apps Store</strong> — Corregido y funcional de nuevo en Proot.</li>
+                <li><strong>📦 Proot APT</strong> — Dependencias resueltas, package manager funcional.</li>
+                <li><strong>➕ add2menu</strong> — Añade shortcuts de apps Proot al escritorio nativo.</li>
+                <li><strong>⚡ Quick Commands</strong> — Instala Antigravity, Brave, Cursor rápidamente.</li>
+                <li><strong>🔧 Optimizaciones</strong> — Scripts optimizados para mejor rendimiento y estabilidad.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.7/XoDos-1.0.7-full_arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Full (1.87 GB) <span class="dl-count">7,731 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.7/xodos_steam-lite.tar.xz" class="asset-btn secondary" target="_blank">
+                🎮 Steam Lite (99.5 MB) <span class="dl-count">1,104 descargas</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- v1.0.6 — STABLE -->
+          <div class="release-card stable" data-type="stable">
+            <div class="release-header">
+              <div class="release-badge stable-badge">✅ Stable</div>
+              <span class="release-date">Mar 19, 2026</span>
+            </div>
+            <h3 class="release-version">v1.0.6</h3>
+            <p class="release-tagline">🏡 The Native & Proot Hybrid Evolution</p>
+            <div class="release-details">
+              <ul>
+                <li><strong>🏡 Xfce4 Nativo</strong> — Escritorio Linux nativo completo, más responsivo que nunca.</li>
+                <li><strong>📦 Apps Nativas</strong> — Firefox, RetroArch, Xemu, PCSX-ReARMed, AetherSX2, Python, TigerVNC pre-instalados.</li>
+                <li><strong>🎮 GPU Drivers</strong> — VirGL, ANGLE, Venus VirtIO, Turnip, GL4ES nativos y Proot.</li>
+                <li><strong>🔄 Entorno Híbrido</strong> — Apps Bionic ARM64 + Proot en un mismo escritorio.</li>
+                <li><strong>🍷 Wine Bionic v10.7</strong> — DXVK, VKD3D, WineD3D actualizados.</li>
+                <li><strong>🎨 Temas</strong> — Nuevo tema por defecto + soporte para temas personalizados.</li>
+                <li><strong>📡 VNC & noVNC</strong> — Comparte tu escritorio desde cualquier navegador en la red.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.6/XoDos-1.0.6-full_arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Full (1.92 GB) <span class="dl-count">1,252 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.6/xodos_steam-lite.tar.xz" class="asset-btn secondary" target="_blank">
+                🎮 Steam Lite (99.5 MB) <span class="dl-count">202 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.6/wine-9.17-proot-amd64-wow64.tar.xz" class="asset-btn secondary" target="_blank">
+                🍷 Wine Proot (54.4 MB) <span class="dl-count">236 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.6/fix-1.0.6.tar.xz" class="asset-btn secondary" target="_blank">
+                🔧 Fix Patch (21.9 MB) <span class="dl-count">278 descargas</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- v1.0.5 — STABLE -->
+          <div class="release-card stable" data-type="stable">
+            <div class="release-header">
+              <div class="release-badge stable-badge">✅ Stable</div>
+              <span class="release-date">Feb 9, 2026</span>
+            </div>
+            <h3 class="release-version">v1.0.5</h3>
+            <p class="release-tagline">⚡ Quick Commands & MT Files Provider</p>
+            <div class="release-details">
+              <ul>
+                <li><strong>⚡ Quick Access Commands</strong> — Instala WPS Office, WhatsApp, Telegram, VSCode, herramientas de video/pintura con un clic.</li>
+                <li><strong>🕊️ Discord Lite</strong> — Cliente ligero de Discord que ahorra almacenamiento.</li>
+                <li><strong>📁 MT Files Provider</strong> — Explora contenedores de apps, copia/borra archivos sin root.</li>
+                <li><strong>🌐 Network Fix</strong> — Corregido error getifaddrs en Android 13+.</li>
+                <li><strong>🖥️ AVNC Auto-start</strong> — Se inicia automáticamente tras la instalación.</li>
+                <li><strong>🍷 Wine & Proot</strong> — Nuevas formas de ejecutar .exe (AMD x86_64 y Hangover ARM64).</li>
+                <li><strong>🐛 Bug Fixes</strong> — Crash en App Info, scripts de terminal, estabilidad general.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.5/XoDos-1.0.5-full_arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Full (1.66 GB) <span class="dl-count">3,261 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.5/wine-9.17-proot-amd64-wow64.tar.xz" class="asset-btn secondary" target="_blank">
+                🍷 Wine Proot (54.4 MB) <span class="dl-count">918 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.5/xodos_steam-lite.tar.xz" class="asset-btn secondary" target="_blank">
+                🎮 Steam Lite (99.5 MB) <span class="dl-count">545 descargas</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- v1.0.4 — STABLE -->
+          <div class="release-card stable" data-type="stable">
+            <div class="release-header">
+              <div class="release-badge stable-badge">✅ Stable</div>
+              <span class="release-date">Ene 24, 2026</span>
+            </div>
+            <h3 class="release-version">v1.0.4</h3>
+            <p class="release-tagline">Estabilidad y mejoras de compatibilidad</p>
+            <div class="release-details">
+              <ul>
+                <li><strong>🍷 Wine 9.17</strong> — Soporte Proot AMD64 con WOW64.</li>
+                <li><strong>🎮 Steam Lite</strong> — Cliente Steam ligero para gaming.</li>
+                <li><strong>🔧 Mejoras de estabilidad</strong> — Optimizaciones generales y fixes de compatibilidad.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.4/XoDos-1.0.4-full_arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Full (1.65 GB) <span class="dl-count">2,145 descargas</span>
+              </a>
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.4/wine-9.17-proot-amd64-wow64.tar.xz" class="asset-btn secondary" target="_blank">
+                🍷 Wine Proot (54.4 MB) <span class="dl-count">680 descargas</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- v1.0.3 — STABLE (Most Popular!) -->
+          <div class="release-card stable popular" data-type="stable">
+            <div class="release-header">
+              <div class="release-badge stable-badge">✅ Stable</div>
+              <div class="popular-badge">🔥 Más Popular</div>
+              <span class="release-date">Dic 8, 2025</span>
+            </div>
+            <h3 class="release-version">v1.0.3</h3>
+            <p class="release-tagline">Primera release masiva — 35,000+ descargas</p>
+            <div class="release-details">
+              <ul>
+                <li><strong>🐧 Core Linux</strong> — Entorno Linux base funcional y estable.</li>
+                <li><strong>🖥️ Desktop Environment</strong> — Escritorio configurado y listo para usar.</li>
+                <li><strong>🔓 No Root</strong> — Funciona completamente sin root en Android.</li>
+                <li><strong>📱 Touch Support</strong> — Controles táctiles básicos operativos.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/v1.0.3/XoDos-1.0.3-full_arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Full (1.36 GB) <span class="dl-count">35,370 descargas</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- v1.0.8 — PRE-RELEASE -->
+          <div class="release-card prerelease" data-type="prerelease">
+            <div class="release-header">
+              <div class="release-badge prerelease-badge">🧪 Pre-release</div>
+              <span class="release-date">Abr 29, 2026</span>
+            </div>
+            <h3 class="release-version">1.0.8.t4</h3>
+            <p class="release-tagline">Test build — APK sin datos (solo para testing)</p>
+            <div class="release-details">
+              <ul>
+                <li>Versión de prueba de la nueva generación de XoDos.</li>
+                <li>Solo APK sin rootfs — espera la versión Full para uso completo.</li>
+                <li>Para testers y contribuidores que quieran probar las novedades antes del release.</li>
+              </ul>
+            </div>
+            <div class="release-assets">
+              <a href="https://github.com/xodiosx/XoDos2/releases/download/1.0.8.t4/XoDos-1.0.8.t4-arm64-v8a.apk" class="asset-btn primary" target="_blank">
+                ⬇ APK Test (21.0 MB) <span class="dl-count">20 descargas</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTRIBUTORS ========== -->
+    <section class="section contributors" id="contributors">
+      <div class="container">
+        <h2 class="section-title">Contribuidores</h2>
+        <p class="section-subtitle">Las personas que hacen posible XoDos2</p>
+        <div class="contributors-grid">
+          <div class="contributor-card main-dev">
+            <img src="https://avatars.githubusercontent.com/u/59384112?v=4" alt="xodiosx" class="contributor-avatar">
+            <div class="contributor-info">
+              <h3>xodiosx <span class="real-name">(Mody)</span></h3>
+              <p class="contributor-role">🎮 Lead Developer & Creador</p>
+              <p class="contributor-desc">Desarrollador principal y autor del proyecto. 466+ commits. Ha construido XoDos2 desde cero, diseñando la arquitectura híbrida, la integración Wine/box64, los GPU drivers y toda la experiencia Flutter.</p>
+              <div class="contributor-links">
+                <a href="https://github.com/xodiosx" target="_blank">GitHub</a>
+                <a href="https://x.com/XAleiwi" target="_blank">X/Twitter</a>
+                <a href="https://www.youtube.com/@XoDosApp" target="_blank">YouTube</a>
+                <a href="https://www.tiktok.com/@xodiosaleiwi" target="_blank">TikTok</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="thanks-block">
+          <h3>💝 Agradecimientos Especiales</h3>
+          <p>A todos los <strong>testers</strong> que reportan bugs, prueban builds experimentales y ayudan a mejorar cada release. A la comunidad de <strong>Telegram y Discord</strong> por su feedback constante. A los proyectos que inspiraron XoDos: <a href="https://github.com/Cateners/tiny_computer" target="_blank">tiny_computer</a> y el <a href="https://github.com/xodiosx/XoDos" target="_blank">XoDos original</a>. Y a cada persona que comparte XoDos con alguien más — ustedes hacen crecer este proyecto. ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMMUNITY ========== -->
+    <section class="section community" id="community">
+      <div class="container">
+        <h2 class="section-title">Comunidad</h2>
+        <p class="section-subtitle">Únete, pregunta, comparte y contribuye</p>
+        <div class="community-grid">
+          <a href="https://t.me/xodemulatorr" target="_blank" class="community-card telegram">
+            <div class="community-icon">💬</div>
+            <h3>Telegram</h3>
+            <p>Grupo principal de soporte y discusión. Resuelve dudas y conecta con otros usuarios.</p>
+            <span class="community-link">t.me/xodemulatorr →</span>
+          </a>
+          <a href="https://discord.gg/d2ChVhPfnF" target="_blank" class="community-card discord">
+            <div class="community-icon">🎮</div>
+            <h3>Discord</h3>
+            <p>Comunidad de Discord para chat en tiempo real, soporte y novedades del proyecto.</p>
+            <span class="community-link">discord.gg/d2ChVhPfnF →</span>
+          </a>
+          <a href="https://github.com/xodiosx/XoDos2" target="_blank" class="community-card github">
+            <div class="community-icon">💻</div>
+            <h3>GitHub</h3>
+            <p>Repositorio del proyecto. Reporta bugs, sugiere features o contribuye con código.</p>
+            <span class="community-link">github.com/xodiosx/XoDos2 →</span>
+          </a>
+          <a href="https://x.com/XAleiwi" target="_blank" class="community-card twitter">
+            <div class="community-icon">🐦</div>
+            <h3>X / Twitter</h3>
+            <p>Sigue al desarrollador para noticias, avances y actualizaciones del proyecto.</p>
+            <span class="community-link">x.com/XAleiwi →</span>
+          </a>
+          <a href="https://www.youtube.com/@XoDosApp" target="_blank" class="community-card youtube">
+            <div class="community-icon">🎬</div>
+            <h3>YouTube</h3>
+            <p>Tutoriales, demos y showcases de XoDos2 en acción.</p>
+            <span class="community-link">@XoDosApp →</span>
+          </a>
+          <a href="https://www.tiktok.com/@xodiosaleiwi" target="_blank" class="community-card tiktok">
+            <div class="community-icon">🎵</div>
+            <h3>TikTok</h3>
+            <p>Clips cortos, tips y demos de lo que puedes hacer con XoDos2.</p>
+            <span class="community-link">@xodiosaleiwi →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DONATE ========== -->
+    <section class="section donate" id="donate">
+      <div class="container">
+        <h2 class="section-title">Apoya el Proyecto</h2>
+        <p class="section-subtitle">XoDos2 es open source y gratuito. Tu apoyo ayuda a mantenerlo vivo.</p>
+        <div class="donate-grid">
+          <a href="https://buymeacoffee.com/karysdev" target="_blank" class="donate-card coffee">
+            <div class="donate-icon">☕</div>
+            <h3>Buy Me a Coffee</h3>
+            <p>Apoya con una donación rápida y sencilla a través de Buy Me a Coffee.</p>
+            <span class="donate-link">buymeacoffee.com/karysdev →</span>
+          </a>
+          <div class="donate-card crypto">
+            <div class="donate-icon">₮</div>
+            <h3>USDT (Crypto)</h3>
+            <p>Donaciones en USDT aceptadas en la siguiente dirección:</p>
+            <div class="crypto-address">
+              <code>0x96e8c405d10da473f5afbe02b514d405131a3804</code>
+              <button class="copy-btn" onclick="copyAddress()" title="Copiar dirección">📋</button>
+            </div>
+            <span class="copy-feedback" id="copyFeedback">✓ Copiado!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://raw.githubusercontent.com/xodiosx/XoDos2/main/icon.png" alt="XoDos" class="footer-icon">
+          <span class="footer-title">XoDos<span>2</span> Rebirth</span>
+        </div>
+        <p class="footer-desc">Bringing Linux to Your Android Device</p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Proyecto</h4>
+          <a href="#about">Qué es</a>
+          <a href="#how-it-works">Cómo Funciona</a>
+          <a href="#features">Características</a>
+          <a href="#releases">Releases</a>
+        </div>
+        <div class="footer-col">
+          <h4>Comunidad</h4>
+          <a href="https://t.me/xodemulatorr" target="_blank">Telegram</a>
+          <a href="https://discord.gg/d2ChVhPfnF" target="_blank">Discord</a>
+          <a href="https://github.com/xodiosx/XoDos2" target="_blank">GitHub</a>
+          <a href="https://www.youtube.com/@XoDosApp" target="_blank">YouTube</a>
+        </div>
+        <div class="footer-col">
+          <h4>Apoyo</h4>
+          <a href="https://buymeacoffee.com/karysdev" target="_blank">Donar ☕</a>
+          <a href="https://github.com/xodiosx/XoDos2/issues" target="_blank">Reportar Bug</a>
+          <a href="https://github.com/xodiosx/XoDos2/blob/main/phantom.md" target="_blank">Phantom Fix</a>
+          <a href="https://github.com/xodiosx/XoDos2/blob/main/faq.md" target="_blank">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>&copy; 2024-2026 XoDos2 Rebirth. Desarrollado con pasión por el XoDos Team.</p>
+      </div>
+      <div class="watermark">
+        <p>Web diseñada y desarrollada por <strong>Karys</strong> · Proyecto XoDos2 por <strong>xodiosx (Mody)</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" title="Volver arriba">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
